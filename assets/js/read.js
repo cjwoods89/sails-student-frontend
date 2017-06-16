@@ -34,7 +34,16 @@
 
    $(function(){
 
-   	//code goes here
+   	$('#studentTable').DataTable( {
+
+         dom: 'lBfrtip',
+         buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+         ],
+         colReorder: true,
+         "scrollX": true,
+
+      } );
 
    })
 

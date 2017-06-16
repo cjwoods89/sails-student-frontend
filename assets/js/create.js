@@ -28,7 +28,59 @@
 
   $(function(){
 
-  	//code goes here
+    var addForm = $('#addStudentForm');
+
+    addForm.validate({
+
+      errorClass: "text-danger",
+      rules: {
+        first_name: {
+          required: true,
+          minlength: 2
+        },
+        last_name: {
+          required: true,
+          minlength: 2
+        },
+        start_date: {
+          required: true,
+          dateISO: true
+        },
+        gpa: {
+          min: 0,
+          max: 4.0
+        },
+        sat: {
+          min: 400,
+          max: 1400
+        }
+      },
+      messages: {
+        first_name: {
+          required: "I pity the fool that leaves this blank.",
+          minlength: jQuery.validator.format("PICNIC ERROR: Please add at least two characters!") // Problem in chair, not in computer
+        },
+        last_name: {
+          required: "I pity the fool that leaves this blank",
+          minlength: jQuery.validator.format("PICNIC ERROR: Please add at least two characters!") // Problem in chair, not in computer
+        },
+        start_date: {
+          required: "I pity the fool that leaves this blank",
+          dateISO: "ID10T ERROR: You have to use YYYY-MM-DD format!" // Idiot error
+        },
+        gpa: {
+          min: jQuery.validator.format("PEBKAC ERROR: Below the allowable limit!"), // Problem exists between keyboard and chair
+          max: jQuery.validator.format("IBM ERROR: Above the allowable limit!") // Idiot Behind Machine
+        },
+        sat: {
+          min: jQuery.validator.format("PEBKAC ERROR: Below the allowable limit!"), // Problem exists between keyboard and chair
+          max: jQuery.validator.format("IBM ERROR: Above the allowable limit!") // Idiot Behind Machine
+        }
+      }
+
+
+    }); // <-- Closes validate
+
 
   })
 
