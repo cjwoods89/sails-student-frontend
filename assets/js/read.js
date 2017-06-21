@@ -34,7 +34,7 @@
 
    $(function(){
 
-   	$('#studentTable').DataTable( {
+   	$('#studentTable').DataTable(); {
 
          dom: 'lBfrtip',
          buttons: [
